@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 
 import { Coordinates, Props, defaultProps } from './CanvasMakeVisible.config';
 
-export const CanvasJsBackground: React.FC<Props> = ({
+export const CanvasMakeVisible: React.FC<Props> = ({
   width,
   height,
   backgroundImage,

@@ -1,3 +1,3 @@
-import { CanvasJsBackground } from './CanvasMakeVisible.component';
+import { CanvasMakeVisible } from './CanvasMakeVisible.component';
 
-export { CanvasJsBackground };
+export { CanvasMakeVisible };
