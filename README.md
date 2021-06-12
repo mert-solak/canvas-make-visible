@@ -1,6 +1,6 @@
-## Render By Scroll
+## Canvas Make Visible
 
-It renders components, when they are in viewport.
+It makes background image visible at mouse coordinates with given options.
 
 ![npm](https://img.shields.io/npm/v/@mertsolak/canvas-make-visible)
 ![license](https://img.shields.io/npm/l/@mertsolak/canvas-make-visible)
@@ -15,8 +15,10 @@ Use node package manager to install @mertsolak/canvas-make-visible.
 npm i @mertsolak/canvas-make-visible
 ```
 
-## Usage
+## Basic Usage
 
-```
+```typescript
+import { CanvasMakeVisible } from '@mertsolak/canvas-make-visible';
 
+const App = () => <CanvasMakeVisible width={500} height={500} backgroundImage={backgroundImagePath} />;
 ```
