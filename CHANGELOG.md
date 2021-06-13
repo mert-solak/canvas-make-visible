@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/mert-solak/canvas-make-visible/compare/v1.0.3...v1.0.4) (2021-06-13)
+
+
+### Bug Fixes
+
+* **src/canvasmakevisible.component.tsx:** infinite stack queue problem fixed ([fc12b38](https://github.com/mert-solak/canvas-make-visible/commit/fc12b3869f05bb7c81cbc8070fbe31dc4f30eb0e))
+
 ### [1.0.3](https://github.com/mert-solak/canvas-make-visible/compare/v1.0.2...v1.0.3) (2021-06-13)
 
 
