@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.3](https://github.com/mert-solak/canvas-make-visible/compare/v1.0.2...v1.0.3) (2021-06-13)
+
+
+### Features
+
+* **src/components/canvasmakevisible.component.tsx:** use-immutable-ref replaced with old one ([55ef42c](https://github.com/mert-solak/canvas-make-visible/commit/55ef42c663a7785c650724762027142cf01f127b))
+
 ### [1.0.2](https://github.com/mert-solak/canvas-make-visible/compare/v1.0.1...v1.0.2) (2021-06-13)
 
 
