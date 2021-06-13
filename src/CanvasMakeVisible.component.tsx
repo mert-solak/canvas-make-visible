@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useImmutableRef } from '@mertsolak/use-immutable-ref';
 
 import { Coordinates, Props, defaultProps } from './CanvasMakeVisible.config';
 
@@ -13,19 +14,11 @@ export const CanvasMakeVisible: React.FC<Props> = ({
   renderTimeout = defaultProps.renderTimeout,
   radius = defaultProps.radius,
 }) => {
-  const [canvas, setCanvas] = useState<HTMLCanvasElement>();
+  const [canvas, setCanvas] = useImmutableRef<HTMLCanvasElement>();
   const [context, setContext] = useState<CanvasRenderingContext2D | null>();
   const [image, setImage] = useState<HTMLImageElement>();
   const [imageCoordinates, setImageCoordinates] = useState<Coordinates[]>();
   const [mouseCoordinates, setMouseCoordinates] = useState<Coordinates>();
-
-  const setRef = useCallback((canvasParam: HTMLCanvasElement | null) => {
-    if (!canvasParam) {
-      return;
-    }
-
-    setCanvas(canvasParam);
-  }, []);
 
   const draw = useCallback(
     (
@@ -162,7 +155,7 @@ export const CanvasMakeVisible: React.FC<Props> = ({
   return (
     <canvas
       style={{ backgroundColor, margin: 0, padding: 0, display: 'block' }}
-      ref={setRef}
+      ref={setCanvas}
       className={className}
     />
   );
