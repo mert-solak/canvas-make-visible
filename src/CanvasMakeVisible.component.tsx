@@ -36,7 +36,7 @@ export const CanvasMakeVisible: React.FC<Props> = ({
       currentOpacity: number,
       currentRadius: number,
     ) => {
-      if (currentOpacity === 1 && currentRadius === radius) {
+      if (currentOpacity > 1 && currentRadius > radius) {
         return;
       }
 
