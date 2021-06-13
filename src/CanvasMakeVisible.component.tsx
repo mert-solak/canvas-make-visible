@@ -50,8 +50,8 @@ export const CanvasMakeVisible: React.FC<Props> = ({
       currentContext.fill();
       currentContext.closePath();
 
-      const newOpacity = currentOpacity === 1 ? currentOpacity : currentOpacity + opacityIncrease;
-      const newRadius = currentRadius === radius ? currentRadius : currentRadius + radiusIncrease;
+      const newOpacity = currentOpacity > 1 ? currentOpacity : currentOpacity + opacityIncrease;
+      const newRadius = currentRadius > radius ? currentRadius : currentRadius + radiusIncrease;
 
       requestAnimationFrame(() =>
         draw(
@@ -97,7 +97,7 @@ export const CanvasMakeVisible: React.FC<Props> = ({
       });
 
       setMouseTimeout = setTimeout(() => {
-        setMouseCoordinates({ x: event.pageX, y: event.pageY });
+        setMouseCoordinates({ x: event.offsetX, y: event.offsetY });
       }, renderTimeout);
     };
 
