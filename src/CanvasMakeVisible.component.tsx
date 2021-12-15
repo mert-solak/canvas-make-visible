@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { useImmutableRef } from '@mertsolak/use-immutable-ref';
 
 import { Coordinates, Props, defaultProps } from './CanvasMakeVisible.config';
@@ -19,6 +19,7 @@ export const CanvasMakeVisible: React.FC<Props> = ({
   const [image, setImage] = useState<HTMLImageElement>();
   const [imageCoordinates, setImageCoordinates] = useState<Coordinates[]>();
   const [mouseCoordinates, setMouseCoordinates] = useState<Coordinates>();
+  const shouldDrawRef = useRef<boolean>(true);
 
   const draw = useCallback(
     (
@@ -33,7 +34,10 @@ export const CanvasMakeVisible: React.FC<Props> = ({
         return;
       }
 
-      currentContext.clearRect(0, 0, width, height);
+      if (!shouldDrawRef.current) {
+        currentContext.clearRect(0, 0, width, height);
+        return;
+      }
 
       currentContext.globalCompositeOperation = 'source-over';
 
@@ -87,6 +91,7 @@ export const CanvasMakeVisible: React.FC<Props> = ({
     let setMouseTimeout: ReturnType<typeof setTimeout>;
 
     const mouseMove = (event: MouseEvent) => {
+      shouldDrawRef.current = false;
       clearTimeout(setMouseTimeout);
       setMouseCoordinates((previousCoordinates) => {
         if (previousCoordinates) {
@@ -97,6 +102,7 @@ export const CanvasMakeVisible: React.FC<Props> = ({
       });
 
       setMouseTimeout = setTimeout(() => {
+        shouldDrawRef.current = true;
         setMouseCoordinates({ x: event.offsetX, y: event.offsetY });
       }, renderTimeout);
     };

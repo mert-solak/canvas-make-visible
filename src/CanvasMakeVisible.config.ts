@@ -19,7 +19,7 @@ export const defaultProps = {
   opacityIncrease: 0.02,
   radius: 50,
   radiusIncrease: 1,
-  renderTimeout: 0,
+  renderTimeout: 100,
   backgroundColor: 'rgba(255,255,255,0)',
   className: '',
 };
